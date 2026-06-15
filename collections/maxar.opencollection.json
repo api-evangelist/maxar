@@ -1,0 +1,316 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Maxar Geospatial Platform (Vantor Hub) API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Authentication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Obtain an OAuth2 bearer token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.maxar.com/authentication/api/get-an-o-auth-2-bearer-token",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "grant_type",
+                  "value": ""
+                },
+                {
+                  "name": "username",
+                  "value": ""
+                },
+                {
+                  "name": "password",
+                  "value": ""
+                },
+                {
+                  "name": "client_id",
+                  "value": ""
+                },
+                {
+                  "name": "client_secret",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Exchange username and password (password flow) for a bearer token."
+        },
+        {
+          "info": {
+            "name": "Create a new API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.maxar.com/authentication/api/create-a-new-api-key",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "bearer",
+              "token": "{{bearerToken}}"
+            }
+          },
+          "docs": "Requires an OAuth2 bearer token."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Discovery",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search STAC items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.maxar.com/discovery/stac/search",
+            "params": [
+              {
+                "name": "collections",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "bbox",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "datetime",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve items matching filters."
+        },
+        {
+          "info": {
+            "name": "Search STAC items (POST body)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.maxar.com/discovery/stac/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search STAC items (POST body)"
+        },
+        {
+          "info": {
+            "name": "List STAC collections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.maxar.com/discovery/stac/collections"
+          },
+          "docs": "List STAC collections"
+        },
+        {
+          "info": {
+            "name": "Get STAC items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.maxar.com/discovery/stac/items"
+          },
+          "docs": "Get STAC items"
+        },
+        {
+          "info": {
+            "name": "List discoverable / filterable queryables",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.maxar.com/discovery/stac/queryables"
+          },
+          "docs": "List discoverable / filterable queryables"
+        },
+        {
+          "info": {
+            "name": "Search with filtering and return tiles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.maxar.com/discovery/stac/image-grid"
+          },
+          "docs": "Search with filtering and return tiles"
+        },
+        {
+          "info": {
+            "name": "Search with filtering and return tiles (POST body)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.maxar.com/discovery/stac/image-grid",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Search with filtering and return tiles (POST body)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Ordering",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List or get content pipelines",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.maxar.com/ordering/list-pipelines",
+            "params": [
+              {
+                "name": "pipeline_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List or get content pipelines"
+        },
+        {
+          "info": {
+            "name": "Estimate usage for an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.maxar.com/ordering/estimate-usage",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate usage for an order"
+        },
+        {
+          "info": {
+            "name": "Validate an order before placing it",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.maxar.com/ordering/validate-order",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Validate an order before placing it"
+        },
+        {
+          "info": {
+            "name": "Place an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.maxar.com/ordering/place-order",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Place an order"
+        },
+        {
+          "info": {
+            "name": "Get details and status for an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.maxar.com/ordering/order-details",
+            "params": [
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get details and status for an order"
+        },
+        {
+          "info": {
+            "name": "List status events for an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.maxar.com/ordering/order-events",
+            "params": [
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List status events for an order"
+        },
+        {
+          "info": {
+            "name": "Cancel an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.maxar.com/ordering/order-events",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Cancel an order"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

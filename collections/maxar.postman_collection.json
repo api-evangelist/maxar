@@ -1,0 +1,1551 @@
+{
+  "item": [
+    {
+      "id": "b48aafab-887b-4f01-b16c-4ea4542b0780",
+      "name": "Authentication",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "83722ab2-3f04-4ffd-93d7-5561634940a8",
+          "name": "Obtain an OAuth2 bearer token",
+          "request": {
+            "name": "Obtain an OAuth2 bearer token",
+            "description": {
+              "content": "Exchange username and password (password flow) for a bearer token.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "authentication",
+                "api",
+                "get-an-o-auth-2-bearer-token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "grant_type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "client_id",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "client_secret",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9fff591c-07b3-4c68-b28c-6b93dd5f4624",
+              "name": "Token",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "authentication",
+                    "api",
+                    "get-an-o-auth-2-bearer-token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "grant_type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "password",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_id",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "client_secret",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"access_token\": \"string\",\n  \"token_type\": \"string\",\n  \"expires_in\": 9885,\n  \"refresh_token\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8cf0e600-f165-41ca-a0a3-312b25d1f18a",
+          "name": "Create a new API key",
+          "request": {
+            "name": "Create a new API key",
+            "description": {
+              "content": "Requires an OAuth2 bearer token.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "authentication",
+                "api",
+                "create-a-new-api-key"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{bearerToken}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fd03fa32-ede6-4333-9ef5-786c773acb4c",
+              "name": "API key created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "authentication",
+                    "api",
+                    "create-a-new-api-key"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"prefix\": \"string\",\n  \"created_at\": \"1996-01-16T03:36:18.099Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ce7ebd73-e6bf-4d55-8e80-f922e8e638df",
+      "name": "Discovery",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "283c7ef5-0ffd-4659-84c0-dcbe409a6a70",
+          "name": "Search STAC items",
+          "request": {
+            "name": "Search STAC items",
+            "description": {
+              "content": "Retrieve items matching filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "discovery",
+                "stac",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "collections",
+                  "value": "<string>,<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bbox",
+                  "value": "<number>,<number>"
+                },
+                {
+                  "disabled": false,
+                  "key": "datetime",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "964a1a03-d5c1-4db5-aac4-fd52e3a7dad8",
+              "name": "STAC FeatureCollection",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discovery",
+                    "stac",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "collections",
+                      "value": "<string>,<string>"
+                    },
+                    {
+                      "key": "bbox",
+                      "value": "<number>,<number>"
+                    },
+                    {
+                      "key": "datetime",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"id\": \"string\",\n      \"collection\": \"string\",\n      \"geometry\": {},\n      \"bbox\": [\n        6127.002112876809,\n        7616.642898303467\n      ],\n      \"properties\": {},\n      \"assets\": {}\n    },\n    {\n      \"type\": \"Feature\",\n      \"id\": \"string\",\n      \"collection\": \"string\",\n      \"geometry\": {},\n      \"bbox\": [\n        7497.283343058953,\n        7426.002153806083\n      ],\n      \"properties\": {},\n      \"assets\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7878f257-49aa-4ae9-b20c-03c8d73e0e3e",
+          "name": "Search STAC items (POST body)",
+          "request": {
+            "name": "Search STAC items (POST body)",
+            "description": {},
+            "url": {
+              "path": [
+                "discovery",
+                "stac",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"collections\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"bbox\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"datetime\": \"<string>\",\n  \"intersects\": \"<object>\",\n  \"limit\": \"<integer>\",\n  \"query\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9c1874df-6d46-45b1-aca0-b9dbe1c9c209",
+              "name": "STAC FeatureCollection",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discovery",
+                    "stac",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"collections\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"bbox\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"datetime\": \"<string>\",\n  \"intersects\": \"<object>\",\n  \"limit\": \"<integer>\",\n  \"query\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"id\": \"string\",\n      \"collection\": \"string\",\n      \"geometry\": {},\n      \"bbox\": [\n        6127.002112876809,\n        7616.642898303467\n      ],\n      \"properties\": {},\n      \"assets\": {}\n    },\n    {\n      \"type\": \"Feature\",\n      \"id\": \"string\",\n      \"collection\": \"string\",\n      \"geometry\": {},\n      \"bbox\": [\n        7497.283343058953,\n        7426.002153806083\n      ],\n      \"properties\": {},\n      \"assets\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "25226d8b-5371-4e5f-ac2c-1b328e5e12c6",
+          "name": "List STAC collections",
+          "request": {
+            "name": "List STAC collections",
+            "description": {},
+            "url": {
+              "path": [
+                "discovery",
+                "stac",
+                "collections"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c331da8b-220e-4751-9c70-45aa1f1e6d73",
+              "name": "Collections",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discovery",
+                    "stac",
+                    "collections"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "981fb1fc-486a-4f4b-9404-fe5878ca73aa",
+          "name": "Get STAC items",
+          "request": {
+            "name": "Get STAC items",
+            "description": {},
+            "url": {
+              "path": [
+                "discovery",
+                "stac",
+                "items"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "73685d85-cca0-4d79-b86c-59fee4d1617b",
+              "name": "Items",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discovery",
+                    "stac",
+                    "items"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"FeatureCollection\",\n  \"features\": [\n    {\n      \"type\": \"Feature\",\n      \"id\": \"string\",\n      \"collection\": \"string\",\n      \"geometry\": {},\n      \"bbox\": [\n        6127.002112876809,\n        7616.642898303467\n      ],\n      \"properties\": {},\n      \"assets\": {}\n    },\n    {\n      \"type\": \"Feature\",\n      \"id\": \"string\",\n      \"collection\": \"string\",\n      \"geometry\": {},\n      \"bbox\": [\n        7497.283343058953,\n        7426.002153806083\n      ],\n      \"properties\": {},\n      \"assets\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "010cbcef-3563-4c86-a1ce-c8264c0c4311",
+          "name": "List discoverable / filterable queryables",
+          "request": {
+            "name": "List discoverable / filterable queryables",
+            "description": {},
+            "url": {
+              "path": [
+                "discovery",
+                "stac",
+                "queryables"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8c903496-c93f-49c6-ad38-33f4b3a5df46",
+              "name": "Queryables JSON Schema",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discovery",
+                    "stac",
+                    "queryables"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6d2eb0b0-0867-4441-becc-03db839b9daa",
+          "name": "Search with filtering and return tiles",
+          "request": {
+            "name": "Search with filtering and return tiles",
+            "description": {},
+            "url": {
+              "path": [
+                "discovery",
+                "stac",
+                "image-grid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "11234442-023b-41bd-8afb-8c3fd3601224",
+              "name": "Image grid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discovery",
+                    "stac",
+                    "image-grid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "698d54a4-7fd1-491c-b5ec-d868c8a20771",
+          "name": "Search with filtering and return tiles (POST body)",
+          "request": {
+            "name": "Search with filtering and return tiles (POST body)",
+            "description": {},
+            "url": {
+              "path": [
+                "discovery",
+                "stac",
+                "image-grid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"collections\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"bbox\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"datetime\": \"<string>\",\n  \"intersects\": \"<object>\",\n  \"limit\": \"<integer>\",\n  \"query\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d8195ab6-fd4a-4168-b91c-e84f7c856fde",
+              "name": "Image grid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "discovery",
+                    "stac",
+                    "image-grid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"collections\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"bbox\": [\n    \"<number>\",\n    \"<number>\"\n  ],\n  \"datetime\": \"<string>\",\n  \"intersects\": \"<object>\",\n  \"limit\": \"<integer>\",\n  \"query\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "85444f0e-dc96-427d-9b5f-b8d2c06a3da7",
+      "name": "Ordering",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8f69c5bb-b1a5-40e7-b6e2-c75b362bd910",
+          "name": "List or get content pipelines",
+          "request": {
+            "name": "List or get content pipelines",
+            "description": {},
+            "url": {
+              "path": [
+                "ordering",
+                "list-pipelines"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "pipeline_id",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "425b0501-bc86-4d07-95b8-5a2e0a5c632c",
+              "name": "Pipelines",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ordering",
+                    "list-pipelines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "pipeline_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"pipeline_id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\"\n  },\n  {\n    \"pipeline_id\": \"string\",\n    \"name\": \"string\",\n    \"description\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c766189f-2a55-467b-95fd-66c22879339d",
+          "name": "Estimate usage for an order",
+          "request": {
+            "name": "Estimate usage for an order",
+            "description": {},
+            "url": {
+              "path": [
+                "ordering",
+                "estimate-usage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pipeline_id\": \"<string>\",\n  \"item_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"delivery\": \"<object>\",\n  \"notification\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "39867b6e-6b3d-43a3-b30a-c1ac408ba163",
+              "name": "Usage estimate",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ordering",
+                    "estimate-usage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pipeline_id\": \"<string>\",\n  \"item_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"delivery\": \"<object>\",\n  \"notification\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "39d65890-9457-49a1-b82d-10acdf37e67a",
+          "name": "Validate an order before placing it",
+          "request": {
+            "name": "Validate an order before placing it",
+            "description": {},
+            "url": {
+              "path": [
+                "ordering",
+                "validate-order"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pipeline_id\": \"<string>\",\n  \"item_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"delivery\": \"<object>\",\n  \"notification\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4f526986-f8b9-4c8e-959a-eae24ad019d1",
+              "name": "Validation result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ordering",
+                    "validate-order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pipeline_id\": \"<string>\",\n  \"item_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"delivery\": \"<object>\",\n  \"notification\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "10131b5e-5d1e-4bc5-88f8-b88cf54ae37f",
+          "name": "Place an order",
+          "request": {
+            "name": "Place an order",
+            "description": {},
+            "url": {
+              "path": [
+                "ordering",
+                "place-order"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"pipeline_id\": \"<string>\",\n  \"item_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"delivery\": \"<object>\",\n  \"notification\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c5ccedb9-ba44-450e-bc54-4c2fa70475ff",
+              "name": "Order placed",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ordering",
+                    "place-order"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"pipeline_id\": \"<string>\",\n  \"item_ids\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"delivery\": \"<object>\",\n  \"notification\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"order_id\": \"string\",\n  \"pipeline_id\": \"string\",\n  \"status\": \"string\",\n  \"created_at\": \"1955-05-05T08:31:03.391Z\",\n  \"delivery\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b2fa7416-e3a7-459d-a743-51f3afb05a66",
+          "name": "Get details and status for an order",
+          "request": {
+            "name": "Get details and status for an order",
+            "description": {},
+            "url": {
+              "path": [
+                "ordering",
+                "order-details"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "order_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "76d812d8-e84c-4083-8aaf-8c264236376b",
+              "name": "Order details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ordering",
+                    "order-details"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"order_id\": \"string\",\n  \"pipeline_id\": \"string\",\n  \"status\": \"string\",\n  \"created_at\": \"1955-05-05T08:31:03.391Z\",\n  \"delivery\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "989a6625-3377-48e9-a744-ce6b43a8acc8",
+          "name": "List status events for an order",
+          "request": {
+            "name": "List status events for an order",
+            "description": {},
+            "url": {
+              "path": [
+                "ordering",
+                "order-events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "order_id",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0b3f544e-2663-4985-90a4-c6d2ce0f044f",
+              "name": "Events",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ordering",
+                    "order-events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "order_id",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1762bbac-3ce2-45d0-ad98-02158e3fffb3",
+          "name": "Cancel an order",
+          "request": {
+            "name": "Cancel an order",
+            "description": {},
+            "url": {
+              "path": [
+                "ordering",
+                "order-events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"order_id\": \"<string>\",\n  \"action\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6da6630e-94e8-4154-a3d7-c64059fcd29d",
+              "name": "Cancellation accepted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ordering",
+                    "order-events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order_id\": \"<string>\",\n  \"action\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.maxar.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "34e3bc8b-b890-4fab-92b8-1fafda3a8dd8",
+    "name": "Maxar Geospatial Platform (Vantor Hub) API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST API surface for the Maxar Geospatial Platform, branded in 2026 as\nVantor Hub. This specification covers the Authentication / Token Service\nused to obtain OAuth2 bearer tokens and API keys, the Discovery API for\nSTAC-style search of the Maxar catalog, and the Ordering API for\nestimating, validating, placing, and tracking orders for imagery and\nderived products. Bearer tokens are required for Admin and API Key\noperations; data-related endpoints accept either an OAuth2 bearer token\nor an API key.\n\n\nContact Support:\n Name: Vantor Hub Developer Portal",
+      "type": "text/plain"
+    }
+  }
+}
