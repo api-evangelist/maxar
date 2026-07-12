@@ -1,0 +1,25 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/maxar-openapi.yml
+summary:
+  types:
+  - apiKey
+  - http
+  api_key_in:
+  - header
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: OAuth2 bearer token obtained from the Authentication Token Service.
+  sources:
+  - openapi/maxar-openapi.yml
+- name: apiKeyAuth
+  type: apiKey
+  in: header
+  parameter: MAXAR-API-KEY
+  description: |-
+    API key for data-related APIs. Cannot be used for Admin or API Key
+    management endpoints, which require an OAuth2 bearer token.
+  sources:
+  - openapi/maxar-openapi.yml

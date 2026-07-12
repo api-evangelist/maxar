@@ -214,6 +214,10 @@ apis:
       - type: Documentation
         url: https://api-postman.maxar.com/
 common:
+  - type: DomainSecurity
+    url: security/maxar-domain-security.yml
+  - type: Authentication
+    url: authentication/maxar-authentication.yml
   - type: Website
     url: https://www.maxar.com/
   - type: GeospatialPlatform
