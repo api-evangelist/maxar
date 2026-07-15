@@ -214,6 +214,8 @@ apis:
       - type: Documentation
         url: https://api-postman.maxar.com/
 common:
+  - type: AgenticAccess
+    url: agentic-access/maxar-agentic-access.yml
   - type: DomainSecurity
     url: security/maxar-domain-security.yml
   - type: Authentication
