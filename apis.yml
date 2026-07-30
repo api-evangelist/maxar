@@ -15,9 +15,22 @@ description: >-
   custom analysis graphs. An official Python SDK (maxar-platform) wraps the
   full surface.
 type: Index
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Provider
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/maxar.png
 tags:
   - Earth Observation
   - Satellite Imagery
@@ -36,183 +49,207 @@ created: '2026-05-23'
 modified: '2026-05-23'
 specificationVersion: '0.20'
 apis:
-  - aid: maxar:authentication
-    name: Maxar Authentication / Token Service
-    description: >-
-      OAuth2-style token service that mints bearer access tokens (and 180-day
-      default API keys) for use against all Vantor Hub / MGP APIs.
-    humanURL: https://developers.maxar.com/docs/authentication/
-    baseURL: https://api.maxar.com
-    tags:
-      - Auth
-      - OAuth2
-      - Tokens
-    properties:
-      - type: Documentation
-        url: https://developers.maxar.com/docs/authentication/
-  - aid: maxar:discovery
-    name: Maxar Discovery API
-    description: >-
-      Unified catalog search across Archive Imagery, Vivid Basemaps, and
-      Change Monitoring. Supports filtering and sorting and returns STAC and
-      GeoJSON metadata representations of matching items.
-    humanURL: https://developers.maxar.com/docs
-    baseURL: https://api.maxar.com/discovery/v1
-    tags:
-      - Discovery
-      - Search
-      - STAC
-      - Catalog
-    properties:
-      - type: Documentation
-        url: https://developers.maxar.com/docs
-  - aid: maxar:ordering
-    name: Maxar Ordering API
-    description: >-
-      Order placement and management for archive and online imagery with
-      multiple delivery options and processing pipelines. Supports tracking
-      order status to completion and delivery.
-    humanURL: https://developers.maxar.com/docs
-    baseURL: https://api.maxar.com/ordering/v1
-    tags:
-      - Ordering
-      - Delivery
-      - Processing
-    properties:
-      - type: Documentation
-        url: https://developers.maxar.com/docs
-  - aid: maxar:streaming-imagery
-    name: Maxar Streaming Imagery API
-    description: >-
-      OGC-compliant WFS / WMS / WMTS streaming services for delivering online
-      imagery strips into web mapping clients and GIS workflows.
-    humanURL: https://developers.maxar.com/docs
-    baseURL: https://api.maxar.com/streaming/v1
-    tags:
-      - Streaming
-      - OGC
-      - WMS
-      - WMTS
-    properties:
-      - type: Documentation
-        url: https://developers.maxar.com/docs
-  - aid: maxar:streaming-basemap
-    name: Maxar Streaming Basemap API
-    description: >-
-      OGC service delivering Maxar Vivid basemap products and their metadata
-      for cartographic and analytic use.
-    humanURL: https://developers.maxar.com/docs
-    baseURL: https://api.maxar.com/streaming/basemaps
-    tags:
-      - Basemaps
-      - Vivid
-      - OGC
-    properties:
-      - type: Documentation
-        url: https://developers.maxar.com/docs
-  - aid: maxar:streaming-3d
-    name: Maxar Streaming 3D API
-    description: >-
-      Streams 3D surface models derived from Maxar's stereo and tri-stereo
-      collections for visualization and 3D analysis.
-    humanURL: https://developers.maxar.com/docs
-    baseURL: https://api.maxar.com/streaming/3d
-    tags:
-      - 3D
-      - Surface Model
-      - Streaming
-    properties:
-      - type: Documentation
-        url: https://developers.maxar.com/docs
-  - aid: maxar:monitoring
-    name: Maxar Monitoring API
-    description: >-
-      Register Areas of Interest and receive alerts when new imagery or
-      analytic outputs match. Drives standing tip-and-cue workflows over the
-      Maxar catalog.
-    humanURL: https://developers.maxar.com/docs
-    baseURL: https://api.maxar.com/monitoring/v1
-    tags:
-      - Monitoring
-      - Alerts
-      - AOI
-    properties:
-      - type: Documentation
-        url: https://developers.maxar.com/docs
-  - aid: maxar:tasking
-    name: Maxar Tasking API
-    description: >-
-      Request new imagery collection from the WorldView Legion and legacy
-      WorldView constellations within a target geometry and time window.
-      Supports Fastview and Flexview tasking tiers.
-    humanURL: https://developers.maxar.com/docs
-    baseURL: https://api.maxar.com/tasking/v1
-    tags:
-      - Tasking
-      - WorldView
-      - Collection
-    properties:
-      - type: Documentation
-        url: https://developers.maxar.com/docs
-  - aid: maxar:raster-analytics
-    name: Maxar Raster Analytics API
-    description: >-
-      Server-side raster processing - band manipulation, classification, and
-      index models (NDVI, NDWI, etc.) - composed as analysis graphs over the
-      Maxar catalog.
-    humanURL: https://developers.maxar.com/docs
-    baseURL: https://api.maxar.com/analytics
-    tags:
-      - Analytics
-      - Raster
-      - NDVI
-      - NDWI
-    properties:
-      - type: Documentation
-        url: https://developers.maxar.com/docs
-  - aid: maxar:vector-analytics
-    name: Maxar Vector Analytics API
-    description: >-
-      Vector deliveries of change monitoring outputs through OGC WMS / WMTS
-      for downstream analytic and GIS consumption.
-    humanURL: https://developers.maxar.com/docs
-    baseURL: https://api.maxar.com/analytics
-    tags:
-      - Vector
-      - Change Monitoring
-      - OGC
-    properties:
-      - type: Documentation
-        url: https://developers.maxar.com/docs
-  - aid: maxar:python-sdk
-    name: Maxar Geospatial Platform Python SDK
-    description: >-
-      Official Python SDK (maxar-platform on PyPI) wrapping the MGP / Vantor
-      Hub APIs for discovery, ordering, monitoring, streaming, and tasking
-      workflows.
-    humanURL: https://pypi.org/project/maxar-platform/
-    baseURL: https://pypi.org/project/maxar-platform/
-    tags:
-      - SDK
-      - Python
-      - PyPI
-    properties:
-      - type: Documentation
-        url: https://maxar-geospatial-platform.readthedocs.io/
-  - aid: maxar:postman
-    name: Maxar MGP Postman Collection
-    description: >-
-      Public Postman workspace documenting the Maxar Geospatial Platform API
-      surface for quick exploration and testing.
-    humanURL: https://api-postman.maxar.com/
-    baseURL: https://api-postman.maxar.com/
-    tags:
-      - Postman
-      - Collection
-      - Reference
-    properties:
-      - type: Documentation
-        url: https://api-postman.maxar.com/
+- aid: maxar:authentication
+  name: Maxar Authentication / Token Service
+  description: >-
+    OAuth2-style token service that mints bearer access tokens (and 180-day default API keys) for use
+    against all Vantor Hub / MGP APIs.
+  humanURL: https://developers.maxar.com/docs/authentication/
+  baseURL: https://api.maxar.com
+  tags:
+  - Auth
+  - OAuth2
+  - Tokens
+  properties:
+  - type: Documentation
+    url: https://developers.maxar.com/docs/authentication/
+- aid: maxar:discovery
+  name: Maxar Discovery API
+  description: >-
+    Unified catalog search across Archive Imagery, Vivid Basemaps, and Change Monitoring. Supports filtering
+    and sorting and returns STAC and GeoJSON metadata representations of matching items.
+  humanURL: https://developers.maxar.com/docs
+  baseURL: https://api.maxar.com/discovery/v1
+  tags:
+  - Discovery
+  - Search
+  - STAC
+  - Catalog
+  properties:
+  - type: Documentation
+    url: https://developers.maxar.com/docs
+- aid: maxar:ordering
+  name: Maxar Ordering API
+  description: >-
+    Order placement and management for archive and online imagery with multiple delivery options and processing
+    pipelines. Supports tracking order status to completion and delivery.
+  humanURL: https://developers.maxar.com/docs
+  baseURL: https://api.maxar.com/ordering/v1
+  tags:
+  - Ordering
+  - Delivery
+  - Processing
+  properties:
+  - type: Documentation
+    url: https://developers.maxar.com/docs
+- aid: maxar:streaming-imagery
+  name: Maxar Streaming Imagery API
+  description: >-
+    OGC-compliant WFS / WMS / WMTS streaming services for delivering online imagery strips into web mapping
+    clients and GIS workflows.
+  humanURL: https://developers.maxar.com/docs
+  baseURL: https://api.maxar.com/streaming/v1
+  tags:
+  - Streaming
+  - OGC
+  - WMS
+  - WMTS
+  properties:
+  - type: Documentation
+    url: https://developers.maxar.com/docs
+- aid: maxar:streaming-basemap
+  name: Maxar Streaming Basemap API
+  description: >-
+    OGC service delivering Maxar Vivid basemap products and their metadata for cartographic and analytic
+    use.
+  humanURL: https://developers.maxar.com/docs
+  baseURL: https://api.maxar.com/streaming/basemaps
+  tags:
+  - Basemaps
+  - Vivid
+  - OGC
+  properties:
+  - type: Documentation
+    url: https://developers.maxar.com/docs
+- aid: maxar:streaming-3d
+  name: Maxar Streaming 3D API
+  description: >-
+    Streams 3D surface models derived from Maxar's stereo and tri-stereo collections for visualization
+    and 3D analysis.
+  humanURL: https://developers.maxar.com/docs
+  baseURL: https://api.maxar.com/streaming/3d
+  tags:
+  - 3D
+  - Surface Model
+  - Streaming
+  properties:
+  - type: Documentation
+    url: https://developers.maxar.com/docs
+- aid: maxar:monitoring
+  name: Maxar Monitoring API
+  description: >-
+    Register Areas of Interest and receive alerts when new imagery or analytic outputs match. Drives standing
+    tip-and-cue workflows over the Maxar catalog.
+  humanURL: https://developers.maxar.com/docs
+  baseURL: https://api.maxar.com/monitoring/v1
+  tags:
+  - Monitoring
+  - Alerts
+  - AOI
+  properties:
+  - type: Documentation
+    url: https://developers.maxar.com/docs
+- aid: maxar:tasking
+  name: Maxar Tasking API
+  description: >-
+    Request new imagery collection from the WorldView Legion and legacy WorldView constellations within
+    a target geometry and time window. Supports Fastview and Flexview tasking tiers.
+  humanURL: https://developers.maxar.com/docs
+  baseURL: https://api.maxar.com/tasking/v1
+  tags:
+  - Tasking
+  - WorldView
+  - Collection
+  properties:
+  - type: Documentation
+    url: https://developers.maxar.com/docs
+- aid: maxar:raster-analytics
+  name: Maxar Raster Analytics API
+  description: >-
+    Server-side raster processing - band manipulation, classification, and index models (NDVI, NDWI, etc.)
+    - composed as analysis graphs over the Maxar catalog.
+  humanURL: https://developers.maxar.com/docs
+  baseURL: https://api.maxar.com/analytics
+  tags:
+  - Analytics
+  - Raster
+  - NDVI
+  - NDWI
+  properties:
+  - type: Documentation
+    url: https://developers.maxar.com/docs
+- aid: maxar:vector-analytics
+  name: Maxar Vector Analytics API
+  description: >-
+    Vector deliveries of change monitoring outputs through OGC WMS / WMTS for downstream analytic and
+    GIS consumption.
+  humanURL: https://developers.maxar.com/docs
+  baseURL: https://api.maxar.com/analytics
+  tags:
+  - Vector
+  - Change Monitoring
+  - OGC
+  properties:
+  - type: Documentation
+    url: https://developers.maxar.com/docs
+- aid: maxar:python-sdk
+  name: Maxar Geospatial Platform Python SDK
+  description: >-
+    Official Python SDK (maxar-platform on PyPI) wrapping the MGP / Vantor Hub APIs for discovery, ordering,
+    monitoring, streaming, and tasking workflows.
+  humanURL: https://pypi.org/project/maxar-platform/
+  baseURL: https://pypi.org/project/maxar-platform/
+  tags:
+  - SDK
+  - Python
+  - PyPI
+  properties:
+  - type: Documentation
+    url: https://maxar-geospatial-platform.readthedocs.io/
+- aid: maxar:postman
+  name: Maxar MGP Postman Collection
+  description: >-
+    Public Postman workspace documenting the Maxar Geospatial Platform API surface for quick exploration
+    and testing.
+  humanURL: https://api-postman.maxar.com/
+  baseURL: https://api-postman.maxar.com/
+  tags:
+  - Postman
+  - Collection
+  - Reference
+  properties:
+  - type: Documentation
+    url: https://api-postman.maxar.com/
+- aid: maxar:maxar-authentication-api
+  name: Maxar Authentication API
+  description: The Authentication API from Maxar — 2 operation(s) for authentication.
+  humanURL: https://developers.maxar.com/docs/authentication/
+  baseURL: https://api.maxar.com
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/maxar-authentication-api-openapi.yml
+- aid: maxar:maxar-discovery-api
+  name: Maxar Discovery API
+  description: The Discovery API from Maxar — 5 operation(s) for discovery.
+  humanURL: https://developers.maxar.com/docs/authentication/
+  baseURL: https://api.maxar.com
+  tags:
+  - Discovery
+  properties:
+  - type: OpenAPI
+    url: openapi/maxar-discovery-api-openapi.yml
+- aid: maxar:maxar-ordering-api
+  name: Maxar Ordering API
+  description: The Ordering API from Maxar — 6 operation(s) for ordering.
+  humanURL: https://developers.maxar.com/docs/authentication/
+  baseURL: https://api.maxar.com
+  tags:
+  - Ordering
+  properties:
+  - type: OpenAPI
+    url: openapi/maxar-ordering-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/maxar-agentic-access.yml
