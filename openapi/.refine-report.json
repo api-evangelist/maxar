@@ -1,0 +1,18 @@
+{
+  "provider": "maxar",
+  "sources": [
+    "maxar-authentication-api-openapi.yml",
+    "maxar-discovery-api-openapi.yml",
+    "maxar-ordering-api-openapi.yml"
+  ],
+  "outputs": [
+    "maxar-authentication-api-openapi.yml",
+    "maxar-discovery-api-openapi.yml",
+    "maxar-ordering-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
