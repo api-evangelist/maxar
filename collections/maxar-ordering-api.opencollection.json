@@ -1,0 +1,138 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Maxar Geospatial Platform (Vantor Hub) Authentication Ordering API",
+    "version": "1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Ordering",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List or get content pipelines",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.maxar.com/ordering/list-pipelines",
+            "params": [
+              {
+                "name": "pipeline_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List or get content pipelines"
+        },
+        {
+          "info": {
+            "name": "Estimate usage for an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.maxar.com/ordering/estimate-usage",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Estimate usage for an order"
+        },
+        {
+          "info": {
+            "name": "Validate an order before placing it",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.maxar.com/ordering/validate-order",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Validate an order before placing it"
+        },
+        {
+          "info": {
+            "name": "Place an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.maxar.com/ordering/place-order",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Place an order"
+        },
+        {
+          "info": {
+            "name": "Get details and status for an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.maxar.com/ordering/order-details",
+            "params": [
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get details and status for an order"
+        },
+        {
+          "info": {
+            "name": "List status events for an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.maxar.com/ordering/order-events",
+            "params": [
+              {
+                "name": "order_id",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "List status events for an order"
+        },
+        {
+          "info": {
+            "name": "Cancel an order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.maxar.com/ordering/order-events",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Cancel an order"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
