@@ -57,6 +57,9 @@ apis:
   humanURL: https://developers.maxar.com/docs/authentication/
   baseURL: https://api.maxar.com
   tags:
+  - Authentication
+  - Tokens
+  tags_raw:
   - Auth
   - OAuth2
   - Tokens
@@ -186,6 +189,10 @@ apis:
   humanURL: https://developers.maxar.com/docs
   baseURL: https://api.maxar.com/analytics
   tags:
+  - Vectors
+  - Change Monitoring
+  - OGC
+  tags_raw:
   - Vector
   - Change Monitoring
   - OGC
