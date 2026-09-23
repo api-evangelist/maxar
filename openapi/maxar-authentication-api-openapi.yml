@@ -1,24 +1,10 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Maxar Geospatial Platform (Vantor Hub) Authentication API
   version: '1'
   description: 'REST API surface for the Maxar Geospatial Platform, branded in 2026 as
 
-    Vantor Hub. This specification covers the Authentication / Token Service
-
-    used to obtain OAuth2 bearer tokens and API keys, the Discovery API for
-
-    STAC-style search of the Maxar catalog, and the Ordering API for
-
-    estimating, validating, placing, and tracking orders for imagery and
-
-    derived products. Bearer tokens are required for Admin and API Key
-
-    operations; data-related endpoints accept either an OAuth2 bearer token
-
-    or an API key.
-
-    '
+    Vantor Hub.'
   contact:
     name: Vantor Hub Developer Portal
     url: https://developers.maxar.com/
@@ -64,6 +50,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Token'
+      operationId: postAuthenticationApiGetAnOAuth2BearerToken
+      x-operation-id-source: derived
   /authentication/api/create-a-new-api-key:
     post:
       tags:
@@ -90,6 +78,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiKey'
+      operationId: postAuthenticationApiCreateANewApiKey
+      x-operation-id-source: derived
 components:
   schemas:
     ApiKey:
